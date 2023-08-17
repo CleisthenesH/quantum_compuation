@@ -11,28 +11,42 @@ The creation and measurement of Bell states is the hello world of quantum comput
 </p>
 The easiest way to show this is with matrix form of the gates.
 A Hadamard gate on the top qubit and nothing on the bottom has the matrix:
-\[H \otimes I = \frac{1}{\sqrt{2}}\begin{bmatrix}1&1\\1&-1\end{bmatrix} \otimes
+```math
+H \otimes I = \frac{1}{\sqrt{2}}\begin{bmatrix}1&1\\1&-1\end{bmatrix} \otimes
 \begin{bmatrix}1&0\\0&1\end{bmatrix} = \frac{1}{\sqrt{2}} 
-\begin{bmatrix}1&0&1&0\\0&1&0&1\\1&0&-1&0\\0&1&0&-1\\\end{bmatrix}\]
+\begin{bmatrix}1&0&1&0\\0&1&0&1\\1&0&-1&0\\0&1&0&-1\\\end{bmatrix}
+```
 And the $CNOT$ matrix can be read from the book:
-\[CNOT =\begin{bmatrix}1&0&0&0\\
+```math
+CNOT =\begin{bmatrix}1&0&0&0\\
 0&1&0&0\\
 0&0&0&1\\
-0&0&1&0 \end{bmatrix}\]
+0&0&1&0 \end{bmatrix}
+```
 Multiplication gives:
-\[CNOT(H\otimes I) = \frac{1}{\sqrt{2}}
-\begin{bmatrix} 1&0&1&0\\ 0&1&0&1\\ 0&1&0&-1\\ 1&0&-1&0\end{bmatrix}\]
+```math
+CNOT(H\otimes I) = \frac{1}{\sqrt{2}}
+\begin{bmatrix} 1&0&1&0\\ 0&1&0&1\\ 0&1&0&-1\\ 1&0&-1&0\end{bmatrix}
+```
 The columns of this matrix are the Bell states, hence:
-\[CNOT(H\otimes I) = |\Phi^+\rangle\langle 00 | + |\Psi^+\rangle\langle 01| + |\Phi^-\rangle\langle 10| + |\Psi^-\rangle\langle 11 |\]
+```math
+CNOT(H\otimes I) = |\Phi^+\rangle\langle 00 | + |\Psi^+\rangle\langle 01| + |\Phi^-\rangle\langle 10| + |\Psi^-\rangle\langle 11 |
+```
 Hence we can create any of Bell states by selecting the appropriate initial state,
 for example $CNOT(H\otimes I)|00\rangle = |\Phi^+\rangle$
 
 We can reuse this result for measuring Bell states by noticing that all the results are involutory:
-\[H^2=CNOT^2=I^2=I\]
+```math
+H^2=CNOT^2=I^2=I
+```
 Hence the inverse of this outer product is:
-\[(H\otimes I)CNOT = |00\rangle\langle \Phi^+| + |01\rangle\langle \Psi^+| + |10\rangle\langle \Phi^-| + |11\rangle\langle \Psi^-|\]
+```math
+(H\otimes I)CNOT = |00\rangle\langle \Phi^+| + |01\rangle\langle \Psi^+| + |10\rangle\langle \Phi^-| + |11\rangle\langle \Psi^-|
+```
 Meaning we can measure which state we are in by reversing the circuit:
-\[(H\otimes I)CNOT|\Phi^-\rangle = |10\rangle\]
+```math
+(H\otimes I)CNOT|\Phi^-\rangle = |10\rangle
+```
 
 # Simulation
 <p align="center">

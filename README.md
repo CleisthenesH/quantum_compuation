@@ -12,7 +12,7 @@ The long term plan for this repo is:
 	- For example Pulses and other time features.
 
 <p align="center">
-	<img src="revision/bloch_sphere.png" alt="A drawing of the Bloch Sphere" width = 300px>
+	<img src="revision/bloch_sphere.bmp" alt="A drawing of the Bloch Sphere" width = 300px>
 	<br>
 	    A drawing of the Block Sphere by Smite-Meister.
 	<br>
