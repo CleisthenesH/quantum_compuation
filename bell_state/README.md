@@ -11,12 +11,14 @@ The creation and measurement of Bell states is the hello world of quantum comput
 </p>
 The easiest way to show this is with matrix form of the gates.
 A Hadamard gate on the top qubit and nothing on the bottom has the matrix:
+
 ```math
 H \otimes I = \frac{1}{\sqrt{2}}\begin{bmatrix}1&1\\1&-1\end{bmatrix} \otimes
 \begin{bmatrix}1&0\\0&1\end{bmatrix} = \frac{1}{\sqrt{2}} 
 \begin{bmatrix}1&0&1&0\\0&1&0&1\\1&0&-1&0\\0&1&0&-1\\\end{bmatrix}
 ```
 And the $CNOT$ matrix can be read from the book:
+
 ```math
 CNOT =\begin{bmatrix}1&0&0&0\\
 0&1&0&0\\
@@ -24,11 +26,13 @@ CNOT =\begin{bmatrix}1&0&0&0\\
 0&0&1&0 \end{bmatrix}
 ```
 Multiplication gives:
+
 ```math
 CNOT(H\otimes I) = \frac{1}{\sqrt{2}}
 \begin{bmatrix} 1&0&1&0\\ 0&1&0&1\\ 0&1&0&-1\\ 1&0&-1&0\end{bmatrix}
 ```
 The columns of this matrix are the Bell states, hence:
+
 ```math
 CNOT(H\otimes I) = |\Phi^+\rangle\langle 00 | + |\Psi^+\rangle\langle 01| + |\Phi^-\rangle\langle 10| + |\Psi^-\rangle\langle 11 |
 ```

@@ -8,7 +8,7 @@ ones in without uncertainty of quantum state,
 can be graphically represented by the Bloch sphere:
 
 <p align="center">
-	<img src="bloch_sphere.bmp" alt="A drawing of the Bloch Sphere" width = 300px>
+	<img src="bloch_sphere.bmp" alt="A drawing of the Bloch Sphere" width = 300px style="background:white;border-style: groove;border-radius:5px;padding:5px">
 	<br>
 	    A drawing of the Block Sphere by Smite-Meister.
 	<br>
@@ -143,8 +143,8 @@ CNOT\big[|10\rangle\big] = |11\rangle
 ## Measurement 
 The Measurement gate take a qubit and converts it to an classical bit by way of standard wave form collapse,
 for example the quantum state:
-```
-\frac{1}{\sqrt{5}}\big(|1\rangle + 2|0\rangle\big)
+```math
+\frac{1}{\sqrt{3}}\big(|1\rangle + \sqrt{2}|0\rangle\big)
 ```
 will measure a $1$ in the classical bit at half the frequency it reports a $0$ bit.
 
