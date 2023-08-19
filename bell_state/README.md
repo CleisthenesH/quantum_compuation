@@ -58,7 +58,7 @@ Meaning we can measure which state we are in by reversing the circuit:
 	<br/>
 	The ciruit to be simulated.
 </p>
-The Qiskit code for simulating this circuit is located in [bell_state.py](bell_state.py).
+The Qiskit code for simulating this circuit is located in bell_state.py.
 I've used barriers to split the circuit into three seditions, both for visual clarity and to stop the qiskit complier combining creators and measurers.
 In the first section we create two Bell states.
 In Qiskit all quibits start in $|0\rangle$ but for variety invert the 2nd and 3rd qubits.
@@ -68,8 +68,8 @@ In the final section I measure the quantum states and but the results in the cla
 After simulation the results are:
 | State | Count |
 | --- | --- |
-| $|1111\rangle$ | 493 |
-| $|1100\rangle$ | 531 |
+| $\|1111\rangle$ | 493 |
+| $\|1100\rangle$ | 531 |
 
 The two most significant bits are always ``11`` because the $|\Psi^-\rangle$ state is created on the 2nd and 3rd qubits, which is measured as $|11\rangle$.
 The two least significant bis are equally ``11`` and ``00`` because it is in the $|\Phi^+\rangle$ Bell state.
