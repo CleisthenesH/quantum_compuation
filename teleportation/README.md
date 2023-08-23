@@ -43,10 +43,10 @@ The message and bell state are now entangled and the state looks messy but can b
 This seperatbility lets us know what Bob's state will be after measuring the X and Z bits:
 | Z bit | X bit | Bob's State |
 | --- | --- | --- |
-| 0 | 0 | $m_0\|0\rangle+m_1\|1\rangle|$
-| 0 | 1 | $m_1\|0\rangle+m_0\|1\rangle|$
-| 1 | 0 | $m_0\|0\rangle-m_1\|1\rangle|$
-| 1 | 1 | $-m_1\|0\rangle+m_0\|1\rangle|$
+| 0 | 0 | $m_0\|0\rangle+m_1\|1\rangle$ |
+| 0 | 1 | $m_1\|0\rangle+m_0\|1\rangle$ |
+| 1 | 0 | $m_0\|0\rangle-m_1\|1\rangle$ |
+| 1 | 1 | $-m_1\|0\rangle+m_0\|1\rangle$ |
 
 The goal is to get back to $m_0|0\rangle+m_1|1\rangle$.
 First notice that every state with the coefficients switch has a X bit set, and vise-versa.
