@@ -68,8 +68,8 @@ In the final section I measure the quantum states and but the results in the cla
 After simulation the results are:
 | State | Count |
 | --- | --- |
-| $\|1111\rangle$ | 493 |
-| $\|1100\rangle$ | 531 |
+| 1111 | 493 |
+| 1100 | 531 |
 
 The two most significant bits are always ``11`` because the $|\Psi^-\rangle$ state is created on the 2nd and 3rd qubits, which is measured as $|11\rangle$.
 The two least significant bis are equally ``11`` and ``00`` because it is in the $|\Phi^+\rangle$ Bell state.
