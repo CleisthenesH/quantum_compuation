@@ -90,3 +90,48 @@ we can preform $CZ$ and $CX$ as quantum operations and then measure.
 Doing so gave the above circuit.
 
 Although not as practically useful it does work as a proof of concept as it outputs $0$ all 1024 times.
+
+# Appendix
+In the Classical Transmission section the state of circuit after the second barrier was given by:
+```math
+\frac{|00\rangle}{2}\otimes(m_0|0\rangle+m_1|1\rangle)+
+\frac{|01\rangle}{2}\otimes(m_1|0\rangle+m_0|1\rangle)+
+\frac{|10\rangle}{2}\otimes(m_0|0\rangle-m_1|1\rangle)+
+\frac{|11\rangle}{2}\otimes(-m_1|0\rangle+m_0|1\rangle)
+```
+This form looks a bit verbose and unmotivated.
+These problems can be fixed by swapping the use of $m_0$ and $m_1$ with their average $\mu = \frac{m_0+m_1}{2}$ and split difference $\delta = \frac{m_0-m_1}{2}$.
+The change is summarised in the following table:
+| Z bit | X bit | Bob's $\|0\rangle$ | Bob's $\|1\rangle$ |
+| --- | --- | --- | --- |
+| 0 | 0 | $\mu+\delta$ | $\mu-\delta$ | 
+| 0 | 1 | $\mu-\delta$ | $\mu+\delta$ |
+| 1 | 0 | $\mu+\delta$ | $-\mu+\delta$ |
+| 1 | 1 | $-\mu+\delta$ | $\mu+\delta$ |
+
+Bob's coefficients are the sum of $\mu$ and $\delta$ with one $-$ thrown in depending on the bits.
+This suggests we use the classic $(-1)^{XZ}$ trick to embed the table in a single function:
+```math
+	\left((-1)^{XZ}\mu+(-1)^{X(1-Z)}\delta\right)|0\rangle+\left((-1)^{(1-X)Z}\mu+(-1)^{(1-X)(1-Z)}\delta\right)|0\rangle
+```
+A bit more algebra gives:
+```math
+\sum_{(X,Z)\in\{0,1\}^2}\frac{(-1)^{XZ}|ZX\rangle}{2}\otimes\bigg(\big(\mu+(-1)^X\delta\big)|0\rangle+(-1)^Z\big(\mu-(-1)^X\delta\big)|1\rangle\bigg)
+```
+The $(-1)^{XZ}$ phase will be consumed by measurement so the remaining term right term of the $\otimes$ is what's important.
+This term directly shows what operations we need,
+remembering that the goal is to get back to:
+```math
+|\text{Message}\rangle = (\mu+\delta)|0\rangle + (\mu-\delta)|1\rangle
+```
+Hence if the X bit is set we need to swap the two coefficients,
+the same as changing the sign in $\mu\pm\delta$,
+and if the Z bit is set we need to swap the sign of $|1\rangle$.
+
+These are the expected bits and operations from the previous sections but the state is more clearly motivated by these conditions and condense.
+
+It can be argued which form is better,
+as the new form is arguably more complex,
+but I think this form is at least cool.
+I think the key insight is that using $\mu\pm\delta$ lets us swap coefficients with a sign change,
+something more directly related to manipulation with gates.

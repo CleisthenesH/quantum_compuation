@@ -2,7 +2,7 @@
 
 **:warning:Living Document: All Parts are Subject to Change:warning:**
 
-This repo is a demonstration of my understanding of quantum computation, and [Qsikit](https://qiskit.org/) in particular.
+This repo is a demonstration of my understanding of quantum computation, and [Qiskit](https://qiskit.org/) in particular.
 The long term plan for this repo is:
 1. Some Quantum Physics Revision
 2. Implementation of Important Quantum Algorithms
